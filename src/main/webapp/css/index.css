@@ -1,0 +1,53 @@
+body{
+	font-family: Roboto;
+	margin: 0%;
+	padding: 0%;
+	width: 100%;
+	height: 100%;
+	background: url("../images/background-earth.jpg") fixed no-repeat center;
+	color:#8AB800 !important;
+}
+
+#init{
+	height:100%;
+	width: 100%;
+}
+
+header{
+	width: 70%;
+	text-align: center;
+	margin:0 auto;
+	margin-bottom: 40px;
+}
+
+header img{
+	width:200px;	
+	margin:0px auto;
+	margin-top:100px;
+}
+
+div{
+	text-align: center;
+	margin: 0 auto;
+	width: 70%;
+}
+
+div p{
+	text-align: justify;
+}
+
+div a {
+	font-size: 20px;
+	background-color: black !important;
+	border:1px solid #8AB800 !important;	
+	padding:20px 40px;
+	border-radius: 5px;
+	color:#8AB800 !important;	
+}
+
+div a:hover{
+	text-decoration: none;
+	color:black !important;
+	background-color: #8AB800 !important;
+	transition-duration:1s;
+}
