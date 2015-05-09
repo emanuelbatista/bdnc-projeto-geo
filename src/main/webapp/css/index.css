@@ -66,6 +66,19 @@ div #start:hover{
 	margin: 10px;
 }
 
+#search{
+       position: fixed;
+       left: 95%;
+       top: 5%;
+       width: 50px;
+       opacity: 0.5;
+       z-index: 20;
+}
+
+#search:hover{
+    opacity: 1;
+}
+
 #map-canvas{
 	height: 100%;
 	position:relative;
