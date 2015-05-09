@@ -1,52 +1,68 @@
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Where I was</title>
-        <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-        <link rel="stylesheet" href="css/index.css" type="text/css">
-        <link href='http://fonts.googleapis.com/css?family=Roboto:100,300,700' rel='stylesheet' type='text/css'>
-        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-        <script src="js/jQuery.min.js"></script>
-        <script src="js/index.js"></script>
-        <link rel="icon" href="logo.ico">
-        <link href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" media="screen" rel="stylesheet" type="text/css" />
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
-        <script type="text/javascript"
-                src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCqAOF3CcILJ6MwkGxW0DvojCwgokbAe5E&sensor=false">
-        </script>
-        <script type="text/javascript" 
-                src="js/autocomplete_map_geocoder.js">
-        </script>
-        <script type="text/javascript">
+<head>
+    <meta charset="UTF-8">
+    <title>Where I was</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/index.css" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:100,300,700' rel='stylesheet' type='text/css'>
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <script src="js/jQuery.min.js"></script>
+    <script src="js/index.js"></script>
+    <link rel="icon" href="logo.ico">
+    <link href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" media="screen" rel="stylesheet" type="text/css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+    <script type="text/javascript"
+    src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCqAOF3CcILJ6MwkGxW0DvojCwgokbAe5E&sensor=false">
+    </script>
+    <script type="text/javascript" 
+    src="js/autocomplete_map_geocoder.js">
+    </script>
+    <script type="text/javascript">
 
-            map = null;
+    map = null;
 
-            function inicialize() {
-                map = new AutocompleteMapGeocoder("#map-canvas", "#address", "#latitude", "#longitude", -6.889707, -38.56121817);
-            }
+    function inicialize() {
+        map = new AutocompleteMapGeocoder("#map-canvas", "#address", "#latitude", "#longitude", -6.889707, -38.56121817);
+    }
 
-            function mostraValores() {
-                alert(map.getLongitude() + "\n" + map.getLatitude());
-            }
+    function mostraValores() {
+        alert(map.getLongitude() + "\n" + map.getLatitude());
+    }
 
-        </script>
-    </head>
-    <body>	
-        <div id="init">
-            <header>		
-                <img src="images/logo-shine.png" alt="">		
-            </header>
-            <div id="content">
-                <h1><b>Where I was</b></h1>
-                <hr align="center" width="30" size="1">
-                <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt error quos nisi, vero deserunt ipsa placeat soluta quas quae tempora doloremque a sint officiis repellendus unde consequatur minus nesciunt eos quibusdam incidunt dolor tempore rerum. Odit dolore nulla nobis in optio rerum quod odio similique laboriosam, iste sunt, vitae amet numquam cumque. Ratione autem ea dolores minus, itaque accusantium incidunt esse unde illum temporibus corrupti magni sequi perferendis odit voluptas eum minima facere veritatis inventore eos id ab ullam. Fugit cumque, nesciunt in deleniti sunt accusamus aspernatur veritatis doloribus minima, tenetur hic enim saepe incidunt alias, esse consequuntur iusto. Ex.</p><br><br>
-                <a href="#" id="start" onClick="inicialize();">Iniciar</a>
-            </div>
+    </script>
+    <link href="CSS/jquery.datetimepicker.css" rel="stylesheet">
+    <script src="js/jquery.datetimepicker.js" type="text/javascript"></script>
+    <script src="js/html5.js" type="text/javascript"></script>
+
+
+    <script src="js/modernizr.js" type="text/javascript"></script>
+    <script>
+    if (!Modernizr.inputtypes.date) {
+        $(function() {
+            $('.data').datetimepicker({
+                lang: "pt-BR",
+                format: "Y-m-d"
+            });
+        });
+    }
+    </script>
+</head>
+<body>	
+    <div id="init">
+        <header>		
+            <img src="images/logo-shine.png" alt="">		
+        </header>
+        <div id="content">
+            <h1><b>Where I was</b></h1>
+            <hr align="center" width="30" size="1">
+            <p class="description">WIW é um sistema colaborativo onde você pode adicionar suas fotos bem no lugar onde foram tiradas, deixando-as visíveis para todos. Assim, você poderá passear por todos os lugares do mundo usando o Google Street View e divertindo-se com as fotos tiradas pelas pessoas ao redor do mundo.</p><br><br>
+            <a href="#" id="start" onClick="inicialize();">Entrar</a>
         </div>
-        <div id="maps">
-            <div id="addImageForm">
-                <a href="#" id="fechar">x</a>
+    </div>
+    <div id="maps">
+        <div id="addImageForm">
+            <a href="#" id="fechar">x</a>
             <h3>Adicionar uma imagem</h3>
             <hr align="center" width="100%" size="1">
             <form action="">
@@ -54,43 +70,44 @@
                 <input type="text" name="authors" id="authors" placeholder="Douglas, Dijalma, Emanuel e João">
                 <label for="description">Descrição:</label>
                 <input type="text" name="description" id="description" placeholder="Esse dia foi louco">
+                <input class="data" type="date" name="end" id="end" required>
                 <label for="image">Imagem:</label>
                 <input type="file" name="image" id="image">
             </form>
         </div>
-            <img src="images/search-icon.png" id="search">
-            <img src="images/plus-icon.png" id="add">
-            <img src="images/logo.png" class="logo">
-            <form action="#" class="navbar-fixed-top navbar-center">
-                <input type="text" name="address" id="address" placeholder="Digite aqui sua busca" />
-                <input type="hidden" name="latitude" id="latitude"/>
-                <input type="hidden" name="longitude" id="longitude"/>
-            </form>
-            <div id="map-canvas"></div>
-        </div>
-        <footer>
-            <p>Douglas Gabriel, Dijalma Silva, Emanuel Batista e João Marcos</p>
-        </footer>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
-        <script type="text/javascript"
-                src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCqAOF3CcILJ6MwkGxW0DvojCwgokbAe5E&sensor=false">
-        </script>
-        <script type="text/javascript" 
-                src="js/autocomplete_map_geocoder.js">
-        </script>
-        <script type="text/javascript">
+        <img src="images/search-icon.png" id="search">
+        <img src="images/plus-icon.png" id="add">
+        <img src="images/logo.png" class="logo">
+        <form action="#" class="navbar-fixed-top navbar-center">
+            <input type="text" name="address" id="address" placeholder="Digite aqui sua busca" />
+            <input type="hidden" name="latitude" id="latitude"/>
+            <input type="hidden" name="longitude" id="longitude"/>
+        </form>
+        <div id="map-canvas"></div>
+    </div>
+    <footer>
+        <p>Douglas Gabriel, Dijalma Silva, Emanuel Batista e João Marcos</p>
+    </footer>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+    <script type="text/javascript"
+    src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCqAOF3CcILJ6MwkGxW0DvojCwgokbAe5E&sensor=false">
+    </script>
+    <script type="text/javascript" 
+    src="js/autocomplete_map_geocoder.js">
+    </script>
+    <script type="text/javascript">
 
-            map = null;
+    map = null;
 
-            function inicialize() {
-                map = new AutocompleteMapGeocoder("#map-canvas", "#address", "#latitude", "#longitude", -6.889707, -38.56121817);
-            }
+    function inicialize() {
+        map = new AutocompleteMapGeocoder("#map-canvas", "#address", "#latitude", "#longitude", -6.889707, -38.56121817);
+    }
 
-            function mostraValores() {
-                alert(map.getLongitude() + "\n" + map.getLatitude());
-            }
+    function mostraValores() {
+        alert(map.getLongitude() + "\n" + map.getLatitude());
+    }
 
-        </script>
-    </body>
+    </script>
+</body>
 </html>
