@@ -92,6 +92,16 @@ div #start:hover{
     opacity: 1;
 }
 
+#fechar{
+    float: right;
+    margin-right: 20px;
+    font-size: 30px;
+}
+
+#fechar:hover{
+    text-decoration: none;
+}
+
 #map-canvas{
     height: 100%;
     position:relative;
