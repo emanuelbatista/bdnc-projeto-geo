@@ -12,9 +12,14 @@ $(document).ready(function(){
                 jQuery('#search').click(function (){
                     jQuery('#search').fadeOut(500);
                     jQuery('#address').fadeIn(400);
-                    
-                    document.getElementById('#address').focus();
-                });     
+                    jQuery('#address').focus();
+                }); 
+                
+                
+                jQuery('#address').blur(function (){
+                   jQuery('#address').fadeOut(500);
+                   jQuery('#search').fadeIn(400);
+                });
 	});
         
         
