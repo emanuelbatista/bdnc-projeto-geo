@@ -2,6 +2,7 @@ package br.com.ifpb.bdnc.projeto.geo.entities;
 
 import java.util.List;
 import javax.persistence.CascadeType;
+import javax.persistence.Embeddable;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
@@ -10,15 +11,11 @@ import javax.persistence.OneToMany;
  *
  * @author DouglasGabriel
  */
-@Entity
+@Embeddable
 public class Coordenate {
 
-    @Id
-    private long id;
     private String lat, lng, heading, pitch, zoom;
-    @OneToMany (mappedBy = "coord", cascade = {CascadeType.ALL})
-    private List<Image> images;
-
+    
     public String getHeading() {
         return heading;
     }
