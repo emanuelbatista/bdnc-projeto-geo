@@ -1,5 +1,7 @@
 package br.com.ifpb.bdnc.projeto.geo.persistence;
 
+import br.com.ifpb.bdnc.projeto.geo.entities.Image;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.persistence.EntityManager;
@@ -20,11 +22,25 @@ public class Persister {
             em.persist(object);
             em.getTransaction().commit();
         } catch (Exception e) {
-            Logger.getLogger(getClass().getName()).log(Level.SEVERE, "exception caught", e);
+            e.printStackTrace();
             em.getTransaction().rollback();
         } finally {
             em.close();
         }
+    }
+    
+    public List getAll (){
+        EntityManager em = emf.createEntityManager();
+        try{
+            em.getTransaction().begin();
+            List lista = em.createNamedQuery("from Image").getResultList();
+            em.getTransaction().commit();
+            return lista;
+        }catch (Exception e){
+            e.printStackTrace();
+            em.getTransaction().rollback();
+        }
+        return null;
     }
 
 }

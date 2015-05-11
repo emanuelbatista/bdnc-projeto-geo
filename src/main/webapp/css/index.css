@@ -108,12 +108,12 @@ div #start:hover{
     position:relative;
 }
 
-#maps form{
+#maps form, .searchCity{
     width: 50%;
     margin:0 auto;
 }
 
-#maps form input{
+#maps form input, .searchCity input{
     border:2px solid #8AB800;
     width:100%;
     padding:10px;
