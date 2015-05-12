@@ -1,14 +1,24 @@
 $(document).ready(function () {
 
-    var searchFocus = false;
-
+    
     jQuery('#maps').hide();
     jQuery('#start').click(function () {
-        jQuery('#init').fadeOut(1000);
+        jQuery('#content').hide(1000);
         jQuery('#maps').fadeIn(1000);
         jQuery('#address').hide();
         jQuery('#addImageForm').hide();
 
+        $('#imgLogo').animate({
+            width: "-=350px",
+            position: "fixed",
+            marginLeft: "-=1220px",
+            zIndex: "20",
+            margin: "10px"
+        }, 2000, function (){
+            jQuery('#init').hide();
+        });
+            
+        
         jQuery('#search').click(function () {
             jQuery('#search').fadeOut(500);
             jQuery('#address').fadeIn(400);
