@@ -6,6 +6,7 @@ import java.awt.HeadlessException;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import javax.imageio.ImageIO;
 import javax.swing.JOptionPane;
 /**
@@ -21,7 +22,9 @@ public class RedimencionadorImagem {
 
     public static void resize(String imagePath, String minImagePath, int width, int height) throws HeadlessException {
         try {
-            imagem = ImageIO.read(new File(imagePath));
+            File file = new File(imagePath);
+            System.out.println(file.exists());
+            imagem = ImageIO.read(file);
             BufferedImage newImagem = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
             Graphics2D g = newImagem.createGraphics();
             g.drawImage(imagem, 0, 0, width, height, null);

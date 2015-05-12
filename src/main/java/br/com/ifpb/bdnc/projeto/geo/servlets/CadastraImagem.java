@@ -5,6 +5,7 @@
  */
 package br.com.ifpb.bdnc.projeto.geo.servlets;
 
+import br.com.ifpb.bdnc.projeto.geo.entities.Coordenate;
 import br.com.ifpb.bdnc.projeto.geo.entities.Image;
 import br.com.ifpb.bdnc.projeto.geo.system.MultipartData;
 import br.com.ifpb.bdnc.projeto.geo.system.RedimencionadorImagem;
@@ -36,6 +37,7 @@ public class CadastraImagem extends HttpServlet {
 
     private Image mountImage(HttpServletRequest request) {
         Image image = new Image();
+        image.setCoord(new Coordenate());
         boolean isMultipart = ServletFileUpload.isMultipartContent(request);
         if (isMultipart) {
             ServletFileUpload upload = new ServletFileUpload();
@@ -53,9 +55,9 @@ public class CadastraImagem extends HttpServlet {
                             image.setAuthors(new String(b));
                         } else if (item.getFieldName().equals("date")) {
                             image.setDate(LocalDate.parse(new String(b), DateTimeFormatter.ofPattern("dd/MM/yyyy")));
-                        } else if (item.getFieldName().equals("lat")) {
+                        } else if (item.getFieldName().equals("latitude")) {
                             image.getCoord().setLat(new String(b));
-                        } else if (item.getFieldName().equals("lng")) {
+                        } else if (item.getFieldName().equals("longitude")) {
                             image.getCoord().setLng(new String(b));
                         } else if (item.getFieldName().equals("heading")) {
                             image.getCoord().setHeading(new String(b));
@@ -73,7 +75,9 @@ public class CadastraImagem extends HttpServlet {
                             String nameToSave = "pubImage" + Calendar.getInstance().getTimeInMillis() + item.getName();
                             image.setImagePath(folder + "/" + nameToSave);
                             md.saveImage(path, item, nameToSave);
-                            StringBuilder imagePath = new StringBuilder(path+File.separator+nameToSave);
+                            StringBuilder imagePath = new StringBuilder(path+File.separator+folder+File.separator+nameToSave);
+                            String[] fileMinImageName = imagePath.toString().split(File.separator);
+                            StringBuilder minImageName = new String(fileMinImageName[fileMinImageName.length-4]);
                             RedimencionadorImagem.resize(imagePath.toString(), imagePath.insert(0, "min").toString(), 32, 32);
                             image.setMinImagePath(imagePath.insert(0, "min").toString());
                         }
