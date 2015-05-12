@@ -15,11 +15,19 @@ public class Image {
 
     @Id
     private long id;
-    private String description, imagePath, authors;
+    private String description, imagePath, minImagePath, authors;
     @Embedded
     private Coordenate coord;
     private LocalDate date;
 
+    public String getMinImagePath() {
+        return minImagePath;
+    }
+
+    public void setMinImagePath(String minImagePath) {
+        this.minImagePath = minImagePath;
+    }
+    
     public long getId() {
         return id;
     }
