@@ -29,7 +29,7 @@
 
             streetView = canvasControl.map.getStreetView();                    
 
-            streetView.setPosition(new google.maps.LatLng(canvasControl.getLongitude(),canvasControl.getLatitude()));
+            streetView.setPosition(new google.maps.LatLng(canvasControl.getLatitude(),canvasControl.getLongitude()));
             streetView.setPov({
                 heading: 265,
                 pitch: 0
