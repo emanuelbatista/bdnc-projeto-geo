@@ -7,6 +7,7 @@ package br.com.ifpb.bdnc.projeto.geo.servlets;
 
 import br.com.ifpb.bdnc.projeto.geo.entities.Coordenate;
 import br.com.ifpb.bdnc.projeto.geo.entities.Image;
+import br.com.ifpb.bdnc.projeto.geo.persistence.Persister;
 import br.com.ifpb.bdnc.projeto.geo.system.MultipartData;
 import br.com.ifpb.bdnc.projeto.geo.system.RedimencionadorImagem;
 import java.io.File;
@@ -33,6 +34,7 @@ public class CadastraImagem extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         Image image = mountImage(request);
+        Persister.persist(image);
     }
 
     private Image mountImage(HttpServletRequest request) {
@@ -75,11 +77,9 @@ public class CadastraImagem extends HttpServlet {
                             String nameToSave = "pubImage" + Calendar.getInstance().getTimeInMillis() + item.getName();
                             image.setImagePath(folder + "/" + nameToSave);
                             md.saveImage(path, item, nameToSave);
-                            StringBuilder imagePath = new StringBuilder(path+File.separator+folder+File.separator+nameToSave);
-                            String[] fileMinImageName = imagePath.toString().split(File.separator);
-                            StringBuilder minImageName = new String(fileMinImageName[fileMinImageName.length-4]);
-                            RedimencionadorImagem.resize(imagePath.toString(), imagePath.insert(0, "min").toString(), 32, 32);
-                            image.setMinImagePath(imagePath.insert(0, "min").toString());
+                            String imageMinPath = path+File.separator+folder+File.separator+"min"+nameToSave;
+                            RedimencionadorImagem.resize(path+File.separator+folder+File.separator+nameToSave, imageMinPath.toString(), 32, 32);
+                            image.setMinImagePath(imageMinPath);
                         }
                     }
                 }

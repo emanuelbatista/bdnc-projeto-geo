@@ -22,19 +22,16 @@ public class RedimencionadorImagem {
 
     public static void resize(String imagePath, String minImagePath, int width, int height) throws HeadlessException {
         try {
-            File file = new File(imagePath);
-            System.out.println(file.exists());
+            File file = new File(imagePath);            
             imagem = ImageIO.read(file);
             BufferedImage newImagem = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
             Graphics2D g = newImagem.createGraphics();
             g.drawImage(imagem, 0, 0, width, height, null);
             File f;                        
             f = new File(minImagePath);            
-            ImageIO.write(newImagem, "JPG", f);
-            JOptionPane.showMessageDialog(null, "Imagem redimensionada com sucesso.");
+            ImageIO.write(newImagem, "JPG", f);            
         } catch (IOException ex) {
-            ex.printStackTrace();
-            JOptionPane.showMessageDialog(null, "Erro ao redimensionar imagem.");
+            ex.printStackTrace();            
         }
     }
 

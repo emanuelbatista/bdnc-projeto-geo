@@ -13,9 +13,9 @@ import javax.persistence.Persistence;
  * @author DouglasGabriel
  */
 public class Persister {
-    EntityManagerFactory emf = Persistence.createEntityManagerFactory("br.com.ifpb.bdnc_projeto-geo_war_1.0-SNAPSHOTPU");
+    private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("br.com.ifpb.bdnc_projeto-geo_war_1.0-SNAPSHOTPU");
 
-    public void persist(Object object) {
+    public static void persist(Object object) {
         EntityManager em = emf.createEntityManager();
         try {
             em.getTransaction().begin();
