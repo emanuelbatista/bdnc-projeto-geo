@@ -35,6 +35,7 @@ public class CadastraImagem extends HttpServlet {
             throws ServletException, IOException {
         Image image = mountImage(request);
         Persister.persist(image);
+        request.getServletContext().getRequestDispatcher("/mapas.jsp").forward(request, response);
     }
 
     private Image mountImage(HttpServletRequest request) {

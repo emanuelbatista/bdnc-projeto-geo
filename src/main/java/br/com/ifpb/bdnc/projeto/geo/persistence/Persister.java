@@ -29,7 +29,7 @@ public class Persister {
         }
     }
     
-    public List getAll (){
+    public static List getAll (){
         EntityManager em = emf.createEntityManager();
         try{
             em.getTransaction().begin();
