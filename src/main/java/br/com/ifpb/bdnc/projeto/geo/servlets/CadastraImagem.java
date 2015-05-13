@@ -55,8 +55,8 @@ public class CadastraImagem extends HttpServlet {
                             image.setDescription(new String(b));
                         } else if (item.getFieldName().equals("authors")) {
                             image.setAuthors(new String(b));
-                        } else if (item.getFieldName().equals("date")) {
-                            image.setDate(LocalDate.parse(new String(b), DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+                        } else if (item.getFieldName().equals("end")) {
+                            image.setDate(LocalDate.parse(new String(b), DateTimeFormatter.ofPattern("yyyy-MM-dd")));
                         } else if (item.getFieldName().equals("latitude")) {
                             image.getCoord().setLat(new String(b));
                         } else if (item.getFieldName().equals("longitude")) {

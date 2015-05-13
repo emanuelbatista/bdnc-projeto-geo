@@ -1,6 +1,8 @@
 package br.com.ifpb.bdnc.projeto.geo.entities;
 
+import br.com.ifpb.bdnc.projeto.geo.convert.LocalDateConverter;
 import java.time.LocalDate;
+import javax.persistence.Convert;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -16,8 +18,11 @@ public class Image {
     @Id
     private long id;
     private String description, imagePath, minImagePath, authors;
+    
     @Embedded
     private Coordenate coord;
+    
+    @Convert(converter = LocalDateConverter.class)
     private LocalDate date;
 
     public String getMinImagePath() {
