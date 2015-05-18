@@ -20,9 +20,9 @@ public class RedimencionadorImagem {
     public RedimencionadorImagem(String caminho, int width, int height) {
     }
 
-    public static void resize(String imagePath, String minImagePath, int width, int height) throws HeadlessException {
+    public static void resize(String pathAbsolute, String imagePath, String minImagePath, int width, int height) throws HeadlessException {
         try {
-            File file = new File(imagePath);            
+            File file = new File(pathAbsolute+imagePath);            
             imagem = ImageIO.read(file);
             BufferedImage newImagem = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
             Graphics2D g = newImagem.createGraphics();

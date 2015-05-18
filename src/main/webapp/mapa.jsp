@@ -1,3 +1,4 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 
     <head>
@@ -46,12 +47,25 @@
 
 
                 });
-
+                adicionarMarcadores(map);
                 google.maps.event.addListener(canvasControl.marker, 'click', function () {
                     console.log("sou foda");
 
                 });
             }
+
+            function adicionarMarcadores(map) {
+            <c:forEach var="i" items="${images}">
+                var marker = new google.maps.Marker({
+                    map: map,
+                    draggable: false,
+                    icon: "${i.minImagePath}"
+
+                });
+                marker.setPosition(new google.maps.LatLng("${i.coord.lat}", "${i.coord.lng}"));
+            </c:forEach>
+            }
+
         </script>
 
     </head>

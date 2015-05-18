@@ -3,7 +3,6 @@ package br.com.ifpb.bdnc.projeto.geo.servlets;
 import br.com.ifpb.bdnc.projeto.geo.entities.Image;
 import br.com.ifpb.bdnc.projeto.geo.persistence.Persister;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -20,7 +19,7 @@ public class CarregaImagens extends HttpServlet {
             throws ServletException, IOException {
         List<Image> images = (List<Image>)Persister.getAll();
         request.setAttribute("images", images);
-        request.getServletContext().getRequestDispatcher("/mapas.jsp").forward(request, response);
+        request.getServletContext().getRequestDispatcher("/mapa.jsp").forward(request, response);
     }
 
     @Override

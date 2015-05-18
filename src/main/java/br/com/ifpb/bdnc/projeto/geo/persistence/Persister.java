@@ -33,7 +33,7 @@ public class Persister {
         EntityManager em = emf.createEntityManager();
         try{
             em.getTransaction().begin();
-            List lista = em.createNamedQuery("from Image").getResultList();
+            List lista = em.createQuery("from Image i").getResultList();
             em.getTransaction().commit();
             return lista;
         }catch (Exception e){

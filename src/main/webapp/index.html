@@ -1,80 +1,15 @@
+<!DOCTYPE html>
+
 <html>
-
-<head>
-    <meta charset="UTF-8">
-    <title>Where I was</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="css/index.css" type="text/css">
-    <link href='http://fonts.googleapis.com/css?family=Roboto:100,300,700' rel='stylesheet' type='text/css'>
-    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <script src="js/jQuery.min.js"></script>
-    <script src="js/index.js"></script>
-    <link rel="icon" href="logo.ico">
-
-
-    <link href="CSS/jquery.datetimepicker.css" rel="stylesheet">
-    <script src="js/jquery.datetimepicker.js" type="text/javascript"></script>
-    <script src="js/html5.js" type="text/javascript"></script>
-
-
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCqAOF3CcILJ6MwkGxW0DvojCwgokbAe5E&sensor=false">
-    </script>
-    <script type="text/javascript" src="js/autocomplete_map_geocoder.js">
-    </script>
-
-    <script type="text/javascript">
-        canvasControl = null;
-        streetView = null;
-
-        function inicialize() {
-            var map;
-            var panorama;
-
-            canvasControl = new AutocompleteMapGeocoder('#map-canvas', '#address', '#latitude', '#lontitude', -6.889707, -38.56121817);
-            map = canvasControl.map;
-
-            $('button').click(function () {
-                panorama = map.getStreetView();
-                panorama.setPosition(new google.maps.LatLng($("#latitude").val(), $("#longitude").val()));
-                panorama.setPov( /** @type {google.maps.StreetViewPov} */ ({
-                    heading: 180,
-                    pitch: -50,
-                    zoom: 0
-                }));
-                var toggle = panorama.getVisible();
-                if (toggle == false) {
-                    panorama.setVisible(true);
-                } else {
-                    panorama.setVisible(false);
-                }
-
-
-            });
-
-            google.maps.event.addListener(canvasControl.marker, 'click', function () {
-                console.log("sou foda");
-
-            });
-        }
-    </script>
-
-    <script src="js/modernizr.js" type="text/javascript"></script>
-    <script>
-        if (!Modernizr.inputtypes.date) {
-            $(function () {
-                $('.data').datetimepicker({
-                    lang: "pt-BR",
-                    format: "Y-m-d"
-                });
-            });
-        }
-    </script>
-</head>
-
-<body>
-    <div id="init">
+    <head>
+        <title>WIW</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <script src="js/newJS.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div id="init">
         <header>
             <img src="images/logo-shine.png" alt="" id="imgLogo">
         </header>
@@ -84,13 +19,8 @@
             <p class="description">WIW é um sistema colaborativo onde você pode adicionar suas fotos bem no lugar onde foram tiradas, deixando-as visíveis para todos. Assim, você poderá passear por todos os lugares do mundo usando o Google Street View e divertindo-se com as fotos tiradas pelas pessoas ao redor do mundo.</p>
             <br>
             <br>
-            <a href="#" id="start" onClick="inicialize();">Entrar</a>
+            <a href="carregaimagens" id="start">Entrar</a>
         </div>
     </div>
-    <footer>
-        <p>Douglas Gabriel, Dijalma Silva, Emanuel Batista e João Marcos</p>
-    </footer>
-
-</body>
-
+    </body>
 </html>

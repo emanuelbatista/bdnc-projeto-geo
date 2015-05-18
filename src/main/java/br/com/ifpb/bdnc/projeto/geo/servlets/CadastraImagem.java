@@ -35,7 +35,7 @@ public class CadastraImagem extends HttpServlet {
             throws ServletException, IOException {
         Image image = mountImage(request);
         Persister.persist(image);
-        request.getServletContext().getRequestDispatcher("/mapas.jsp").forward(request, response);
+        request.getServletContext().getRequestDispatcher("/mapa.jsp").forward(request, response);
     }
 
     private Image mountImage(HttpServletRequest request) {
@@ -78,8 +78,8 @@ public class CadastraImagem extends HttpServlet {
                             String nameToSave = "pubImage" + Calendar.getInstance().getTimeInMillis() + item.getName();
                             image.setImagePath(folder + "/" + nameToSave);
                             md.saveImage(path, item, nameToSave);
-                            String imageMinPath = path+File.separator+folder+File.separator+"min"+nameToSave;
-                            RedimencionadorImagem.resize(path+File.separator+folder+File.separator+nameToSave, imageMinPath.toString(), 32, 32);
+                            String imageMinPath = folder+File.separator+"min"+nameToSave;
+                            RedimencionadorImagem.resize(path,folder+File.separator+nameToSave, path+File.separator+imageMinPath.toString(), 32, 32);
                             image.setMinImagePath(imageMinPath);
                         }
                     }
