@@ -1,72 +1,72 @@
-body{
+body {
     font-family: Roboto;
     margin: 0%;
     padding: 0%;
     width: 100%;
     height: 100%;
-    color:#8AB800 !important;
+    color: #8AB800 !important;
     background-color: black;
 }
 
-#init{
-    min-height:100%;
+#init {
+    min-height: 100%;
     width: 100%;
     background: url("../images/background-earth.jpg") fixed no-repeat center;
-    padding-bottom:50px;
+    padding-bottom: 50px;
 }
 
-header{
+header {
     width: 70%;
     text-align: center;
-    margin:0 auto;
+    margin: 0 auto;
     margin-bottom: 40px;
 }
 
-header img{
-    width:50%;
-    margin:0px auto;
-    margin-top:100px;
+header img {
+    width: 50%;
+    margin: 0px auto;
+    margin-top: 100px;
 }
 
-#content{
+#content {
     text-align: center;
     margin: 0 auto;
     width: 70%;
 }
 
-div hr{
-    border-color:#8AB800 !important;
+div hr {
+    border-color: #8AB800 !important;
 }
 
-div p{
+div p {
     text-align: justify;
 }
 
 div #start {
     font-size: 20px;
     background-color: black !important;
-    border:1px solid #8AB800 !important;	
-    padding:20px 40px;
+    border: 1px solid #8AB800 !important;
+    padding: 20px 40px;
     border-radius: 5px;
-    color:#8AB800 !important;	
+    color: #8AB800 !important;
 }
 
-div #start:hover{
+div #start:hover {
     text-decoration: none;
-    color:black !important;
+    color: black !important;
     background-color: #8AB800 !important;
-    transition-duration:1s;
+    transition-duration: 1s;
 }
 
-#maps .logo{
+#maps .logo {
     width: 70px;
     float: left;
-    position:absolute;
+    position: absolute;
     z-index: 20;
     margin: 10px;
 }
 
-#search{
+#search {
     position: fixed;
     left: 95%;
     top: 10%;
@@ -75,7 +75,7 @@ div #start:hover{
     z-index: 20;
 }
 
-#add{
+#add {
     position: fixed;
     left: 95%;
     top: 80%;
@@ -84,87 +84,96 @@ div #start:hover{
     width: 50px;
 }
 
-#add:hover{
+#add:hover {
     opacity: 1;
 }
 
-#search:hover{
+#search:hover {
     opacity: 1;
 }
 
-#fechar{
+#fechar {
     float: right;
     margin-right: 20px;
     font-size: 30px;
-    color:#8AB800;
+    color: #8AB800;
 }
 
-#fechar:hover{
+#fechar:hover {
     text-decoration: none;
 }
 
-#map-canvas{
-    height: 100%;
-    position:relative;
+#map-canvas {
+    height: 91%;
+    position: relative;
 }
 
-#maps form, .searchCity{
+#maps form,
+.searchCity {
     width: 50%;
-    margin:0 auto;
+    margin: 0 auto;
 }
 
-#maps form input, .searchCity input{
-    border:2px solid #8AB800;
-    width:100%;
-    padding:10px;
-    border-radius:5px;	
-    background-color:rgba(0,0,0,0.7);	
+#maps form input,
+.searchCity input {
+    border: 2px solid #8AB800;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.7);
     margin-bottom: 10px;
     text-align: center;
     margin-top: 10px;
 }
 
-footer{
+footer {
     background-color: black;
-    padding:10px;
+    padding: 10px;
     text-align: center;
 }
 
-#addImageForm{
+#addImageForm {
     width: 50%;
-    border:2px solid #8AB800;
+    border: 2px solid #8AB800;
     border-radius: 5px;
-    position:fixed;
-    background-color: rgba(0,0,0,0.7);
-    margin:100px 25%;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.7);
+    margin: 100px 25%;
     z-index: 40;
     box-shadow: 5px 0px 40px black;
     padding-bottom: 40px;
 }
 
-#addImageForm h3{
+#addImageForm h3 {
     text-align: center;
 }
 
-#addImageForm hr{
-    border-color:#8AB800;
+#addImageForm hr {
+    border-color: #8AB800;
 }
 
-#addImageForm form{
+#addImageForm form {
     width: 80%;
 }
 
-#addImageForm form input{
-    border:0px !important;
+#addImageForm form input {
+    border: 0px !important;
     padding: 5px;
     margin-top: 0px;
     border-bottom: 2px solid white !important;
     border-radius: 0px;
-    background-color: rgba(0,0,0,0);
+    background-color: rgba(0, 0, 0, 0);
 }
 
-#addImageForm form input:hover, #addImageForm form input:focus{
-    border-bottom:2px solid #8AB800 !important;
-    outline:none;
-    transition-duration:0.5s;
+#addImageForm form input:hover,
+#addImageForm form input:focus {
+    border-bottom: 2px solid #8AB800 !important;
+    outline: none;
+    transition-duration: 0.5s;
+}
+
+.button {
+    background-color: #8AB800;
+    border-style: none;
+    margin: auto;
 }

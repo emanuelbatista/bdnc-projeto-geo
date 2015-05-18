@@ -9,6 +9,7 @@ function AutocompleteMapGeocoder(mapSelector, addressSelector, latSelector, lonS
     this.marker = this.initializeMarker();
     this.listenToDragEvents();
     this.autocompleteAddress();
+    console.log("Ai dentro");
 }
 
 AutocompleteMapGeocoder.prototype.initializeMap = function (mapSelector) {
@@ -23,7 +24,9 @@ AutocompleteMapGeocoder.prototype.initializeMap = function (mapSelector) {
 AutocompleteMapGeocoder.prototype.initializeMarker = function () {
     var marker = new google.maps.Marker({
         map: this.map,
-        draggable: true
+        draggable: true,
+        icon: "images/icon.png"
+        
     });
     marker.setPosition(this.initialPosition);
     return marker;

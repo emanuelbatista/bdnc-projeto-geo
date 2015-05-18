@@ -4,9 +4,17 @@
         <servlet-name>CadastraImagem</servlet-name>
         <servlet-class>br.com.ifpb.bdnc.projeto.geo.servlets.CadastraImagem</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CarregaImagens</servlet-name>
+        <servlet-class>br.com.ifpb.bdnc.projeto.geo.servlets.CarregaImagens</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CadastraImagem</servlet-name>
         <url-pattern>/cadastraimagem</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CarregaImagens</servlet-name>
+        <url-pattern>/carregaimagens</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
