@@ -1,11 +1,6 @@
 package br.com.ifpb.bdnc.projeto.geo.entities;
 
-import java.util.List;
-import javax.persistence.CascadeType;
 import javax.persistence.Embeddable;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
 
 /**
  *
