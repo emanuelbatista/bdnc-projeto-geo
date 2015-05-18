@@ -16,11 +16,16 @@ implements AttributeConverter<LocalDate, Date> {
 
     @Override
     public Date convertToDatabaseColumn(LocalDate date) {
-        return Date.valueOf(date);
+        if(date!=null)
+           return Date.valueOf(date);
+        else
+            return null;
     }
 
     @Override
     public LocalDate convertToEntityAttribute(Date value) {
+         if(value!=null)
         return value.toLocalDate();
+        else return null;
     }
 }

@@ -2,9 +2,13 @@ package br.com.ifpb.bdnc.projeto.geo.entities;
 
 import br.com.ifpb.bdnc.projeto.geo.convert.LocalDateConverter;
 import java.time.LocalDate;
+import javax.annotation.Generated;
+import javax.persistence.Basic;
 import javax.persistence.Convert;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
@@ -16,6 +20,7 @@ import javax.persistence.ManyToOne;
 public class Image {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String description, imagePath, minImagePath, authors;
     
@@ -23,6 +28,7 @@ public class Image {
     private Coordenate coord;
     
     @Convert(converter = LocalDateConverter.class)
+    @Basic(optional = true)
     private LocalDate date;
 
     public String getMinImagePath() {
