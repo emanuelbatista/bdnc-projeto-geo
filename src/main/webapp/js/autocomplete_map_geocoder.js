@@ -24,8 +24,7 @@ AutocompleteMapGeocoder.prototype.initializeMap = function (mapSelector) {
 AutocompleteMapGeocoder.prototype.initializeMarker = function () {
     var marker = new google.maps.Marker({
         map: this.map,
-        draggable: true,
-        icon: "images/icon.png"
+        draggable: true
         
     });
     marker.setPosition(this.initialPosition);
