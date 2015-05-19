@@ -22,7 +22,7 @@ public class RedimencionadorImagem {
 
     public static void resize(String pathAbsolute, String imagePath, String minImagePath, int width, int height) throws HeadlessException {
         try {
-            File file = new File(pathAbsolute+imagePath);            
+            File file = new File(pathAbsolute+File.separator+imagePath);            
             imagem = ImageIO.read(file);
             BufferedImage newImagem = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
             Graphics2D g = newImagem.createGraphics();
