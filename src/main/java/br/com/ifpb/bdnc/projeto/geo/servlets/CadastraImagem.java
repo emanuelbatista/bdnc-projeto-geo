@@ -30,7 +30,10 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
  * @author DouglasGabriel
  */
 public class CadastraImagem extends HttpServlet {
-
+        
+    private final int IMAGE_MIN_WIDTH = 40;
+    private final int IMAGE_MIM_HEIGHT = 40;
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         Image image = mountImage(request);
@@ -80,7 +83,7 @@ public class CadastraImagem extends HttpServlet {
                             image.setImagePath(folder + "/"+ nameToSave);
                             md.saveImage(path, item, nameToSave);
                             String imageMinPath = folder+"/"+"min"+nameToSave;
-                            RedimencionadorImagem.resize(path,folder+"/"+nameToSave, path+"/"+imageMinPath.toString(), 32, 32);
+                            RedimencionadorImagem.resize(path,folder+"/"+nameToSave, path+"/"+imageMinPath.toString(), IMAGE_MIN_WIDTH, IMAGE_MIM_HEIGHT);
                             image.setMinImagePath(imageMinPath);
                         }
                     }
