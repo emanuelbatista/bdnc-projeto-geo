@@ -2,7 +2,7 @@
 <html>
 
     <head>
-        <meta charset="UTF-8">
+        <meta charset="utf-8">
         <title>Where I was</title>
         <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
         <link rel="stylesheet" href="css/index.css" type="text/css">
@@ -26,12 +26,24 @@
                 position:absolute;
                 left:0;
                 top:0;
-                background:#FFF;
+                background:#000;
+                opacity: 0.7;
                 z-index:9900;
                 padding:10px;
                 border-radius:10px;
+                text-align: center;
             }
-
+            
+            .window a{
+                color: #5cb85c;
+                float: right;
+                text-decoration: none;
+            }
+            
+            a:hover{
+                color: #398439;
+            }
+            
             #mascara{
                 display:none;
                 position:absolute;
@@ -97,7 +109,7 @@
                     var top = ($(window).height() / 2) - ($(modal).height() / 2);                                        
                     
                     $(modal).css({'top': top, 'left': left});
-                    $(modal).html("<h6>${i.description}</h6><h6>${i.authors}</h6><h6>${i.date}</h6><img src="+"${i.imagePath}"+" height='80%' alt='imagem'>");
+                    $(modal).html("<a href='#' id='x'>X</a><h6>${i.description}</h6><h6>${i.authors}</h6><h6>${i.date}</h6><img src="+"${i.imagePath}"+" height='80%' alt='imagem'>");
                     $(modal).show();
 
                 });
