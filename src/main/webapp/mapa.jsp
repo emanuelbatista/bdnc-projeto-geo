@@ -12,6 +12,7 @@
         <script src="js/index.js"></script>
         <link rel="icon" href="logo.ico">
         <script src="js/modal.js"></script>
+        <link rel="stylesheet" href="css/styleInput.css"/>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
         <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCqAOF3CcILJ6MwkGxW0DvojCwgokbAe5E&sensor=false">
