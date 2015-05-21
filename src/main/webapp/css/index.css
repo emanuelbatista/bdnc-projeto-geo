@@ -115,7 +115,7 @@ div #start:hover {
 }
 
 #maps form input,
-.searchCity input {
+.searchCity input, .searchCity span > *{
     border: 2px solid #8AB800;
     width: 100%;
     padding: 10px;
