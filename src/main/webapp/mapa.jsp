@@ -21,8 +21,7 @@
         </script>
         <style>
             .window{
-                display:none;
-                width:400px;
+                display:none;                
                 height:400px;
                 position:absolute;
                 left:0;
@@ -153,10 +152,7 @@
 
             <div id="mascara"></div>
             <button id="button">Alternar para street view</button>
-        </div>
-        <footer>
-            <p>Douglas Gabriel, Dijalma Silva, Emanuel Batista e João Marcos</p>
-        </footer>
+        </div>        
 
     </body>
 
