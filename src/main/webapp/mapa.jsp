@@ -109,7 +109,7 @@
                     var top = ($(window).height() / 2) - ($(modal).height() / 2);                                        
                     
                     $(modal).css({'top': top, 'left': left});
-                    $(modal).html("<a href='#' id='x'>X</a><h6>${i.description}</h6><h6>${i.authors}</h6><h6>${i.date}</h6><img src="+"${i.imagePath}"+" height='80%' alt='imagem'>");
+                    $(modal).html("<a href='#' id='x'>X</a><h6>Descriçao : ${i.description}</h6><h6>Autores : ${i.authors}</h6><h6>Data : ${i.date}</h6><img src="+"${i.imagePath}"+" height='80%' alt='imagem'>");
                     $("#x").click(function (){
                         $(modal).hide();
                         $('#mascara').hide();
