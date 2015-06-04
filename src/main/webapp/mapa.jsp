@@ -33,17 +33,17 @@
                 border-radius:10px;
                 text-align: center;
             }
-            
+
             .window a{
                 color: #5cb85c;
                 float: right;
                 text-decoration: none;
             }
-            
+
             a:hover{
                 color: #398439;
             }
-            
+
             #mascara{
                 display:none;
                 position:absolute;
@@ -91,12 +91,12 @@
                 var marker = new google.maps.Marker({
                     map: map,
                     draggable: false,
-                    icon: "${i.minImagePath}"                    
+                    icon: "${i.minImagePath}"
                 });
 
                 marker.setPosition(new google.maps.LatLng("${i.coord.lat}", "${i.coord.lng}"));
 
-                google.maps.event.addListener(marker, 'click', function () {                                        
+                google.maps.event.addListener(marker, 'click', function () {
                     var alturaTela = $(document).height();
                     var larguraTela = $(window).width();
 
@@ -106,11 +106,11 @@
                     $('#mascara').fadeTo("slow", 0.8);
 
                     var left = ($(window).width() / 2) - ($(modal).width() / 2);
-                    var top = ($(window).height() / 2) - ($(modal).height() / 2);                                        
-                    
+                    var top = ($(window).height() / 2) - ($(modal).height() / 2);
+
                     $(modal).css({'top': top, 'left': left});
-                    $(modal).html("<a href='#' id='x'>X</a><h6>Descriçao : ${i.description}</h6><h6>Autores : ${i.authors}</h6><h6>Data : ${i.date}</h6><img src="+"${i.imagePath}"+" height='80%' alt='imagem'>");
-                    $("#x").click(function (){
+                    $(modal).html("<a href='#' id='x'>X</a><h6>Descriçao : ${i.description}</h6><h6>Autores : ${i.authors}</h6><h6>Data : ${i.date}</h6><img src=" + "${i.imagePath}" + " height='80%' alt='imagem'>");
+                    $("#x").click(function () {
                         $(modal).hide();
                         $('#mascara').hide();
                     });
